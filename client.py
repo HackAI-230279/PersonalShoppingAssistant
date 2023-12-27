@@ -2,8 +2,10 @@ from uagents import Agent, Context, Model
 from dotenv import load_dotenv
 from typing import Dict, List
 import logging
+import os
 
 load_dotenv()
+
 
 class Message(Model):
     message: str
@@ -41,7 +43,7 @@ async def start(ctx: Context):
     logging.setLevel = logging.WARN
     ctx.logger.info(f"Hello, my name is {ctx.name} and address is {ctx.address}")
     await ctx.send(
-        "agent1qw7gh69x7q2lj23mrc3n24yt7qjfe6jaec863907geqpz3mx47q06zg7rnr",
+        os.getenv("SERVER_ADDRESS"),
         Query(text=input("\nPlease enter product name: ")),
     )
 

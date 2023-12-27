@@ -9,13 +9,16 @@ price_agent = Agent(
     endpoint=["http://127.0.0.1:8000/submit"],
 )
 
+
 @price_agent.on_event("startup")
 async def start(ctx: Context):
     ctx.logger.info(f"Hello, my name is {ctx.name} and address is {ctx.address}")
 
+
 @price_agent.on_event("shutdown")
 async def stop(ctx: Context):
     ctx.logger.info(f"Bye, this was {ctx.name}. Nice meeting ya!")
+
 
 @price_agent.on_message(model=Query)
 async def search(ctx: Context, sender: str, msg: Query):
@@ -29,9 +32,10 @@ async def search(ctx: Context, sender: str, msg: Query):
         ),
     )
 
+
 @price_agent.on_message(model=Choice)
 async def search(ctx: Context, sender: str, msg: Choice):
-    result = msg.results[msg.choice-1]
+    result = msg.results[msg.choice - 1]
     ctx.logger.info(f"Agent {sender} selected {result['name']} from {result['site']}")
     await ctx.send(
         sender,
