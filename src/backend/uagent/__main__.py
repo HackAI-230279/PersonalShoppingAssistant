@@ -1,11 +1,13 @@
 from uagents import Agent, Context
-from . import *
 
 from backend.sites.__main__ import sorted_results
+
+from . import *
 
 price_agent = Agent(
     name="Shopping Assistant",
     port=8000,
+    seed="our seeeeeeeeed for server lol",
     endpoint=["http://127.0.0.1:8000/submit"],
 )
 

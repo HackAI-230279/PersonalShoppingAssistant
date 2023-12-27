@@ -33,6 +33,7 @@ To deploy this project:
 6. Run the following command to start the backend:
 
    ```bash
+   cd src
    python3 -m backend
    ```
 

@@ -1,8 +1,9 @@
-from uagents import Agent, Context, Model
-from dotenv import load_dotenv
-from typing import Dict, List
 import logging
 import os
+from typing import Dict, List
+
+from dotenv import load_dotenv
+from uagents import Agent, Context, Model
 
 load_dotenv()
 
@@ -40,7 +41,6 @@ client_agent = Agent(
 
 @client_agent.on_event("startup")
 async def start(ctx: Context):
-    logging.setLevel = logging.WARN
     ctx.logger.info(f"Hello, my name is {ctx.name} and address is {ctx.address}")
     await ctx.send(
         os.getenv("SERVER_ADDRESS"),

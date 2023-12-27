@@ -1,18 +1,18 @@
-import requests
-from bs4 import BeautifulSoup
+import os
 from typing import List
+
+import requests
+from amazondata.search_result_extractor import SearchResultExtractor
+from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from amazondata.search_result_extractor import SearchResultExtractor
-from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
+
 def amazon(query: str) -> List:
-    service = Service(
-        executable_path=rf"{os.getenv('CHROMEDRIVER_PATH')}"
-    )
+    service = Service(executable_path=rf"{os.getenv('CHROMEDRIVER_PATH')}")
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     driver = webdriver.Chrome(service=service, options=options)
