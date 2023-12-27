@@ -9,6 +9,10 @@ This project is an Agent made using Fetch.ai's UAgent that acts as a personal sh
 
 **Tech Stack:** Python, Poetry, BS4, Selenium, uAgents Library
 
+## Video Demo
+
+[![Video Demo](https://img.youtube.com/vi/e4_sfQrykpM/0.jpg)](https://www.youtube.com/watch?v=e4_sfQrykpM)
+
 ## Deployment
 
 To deploy this project:
@@ -51,6 +55,10 @@ To deploy this project:
 <img src="https://graph.org/file/b26313d73e4d05de84a85.png" style="display: block; margin: 0 auto; width: 110px;" align="right">
 
 This repository is tailored for the TechFest Hackathon and leverages the uAgent library. Explore more about uAgents at [Fetch.ai/uAgents](https://github.com/fetchai/uAgents/)
+
+## Disclaimer
+
+This project is not affiliated with Amazon or Flipkart in any way. The project is made for educational purposes only.
 
 ## Copyright and License
 
