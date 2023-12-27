@@ -4,11 +4,14 @@ from typing import List
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from amazondata.search_result_extractor import SearchResultExtractor
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 def amazon(query: str) -> List:
     service = Service(
-        executable_path=r"C:\Users\shash\Downloads\chromedriver-win64\chromedriver.exe"
+        executable_path=rf"{os.getenv('CHROMEDRIVER_PATH')}"
     )
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
